@@ -10,8 +10,17 @@ public class AdminHomeTests extends LoginTests{
 	private AdminHomePOM adminhome; 
 	@Test(priority=2)
 	public void UNF_011() throws InterruptedException{
+		
 		adminhome= new AdminHomePOM(driver);
-		adminhome.clickmenu();
+		if(menu.equalsIgnoreCase("Categories"))
+		{
+		adminhome.clickmenu("Categories");
+		}
+		else if(menu.equalsIgnoreCase("Products")){
+			adminhome.clickmenu("Products");
+		}
+		
 	}
+	
 
 }

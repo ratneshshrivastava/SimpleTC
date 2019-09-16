@@ -9,14 +9,14 @@ public class CategoryTest extends AdminHomeTests {
 	private CategoriesPOM category;;
 	//private WebDriver driver;
 	//private CategoriesPOM category = new CategoriesPOM(driver);
-	@Test(priority =3)
+	@Test(priority=3)
 	public void Category_SelectRow() throws InterruptedException{
 		category = new CategoriesPOM(driver);
-		category.selectrow("dress");
+		category.selectrow("xx");
 		
 		
 	}
-	@Test(priority =4,dependsOnMethods="Category_SelectRow")
+	@Test(priority=4,dependsOnMethods="Category_SelectRow")
 	public void Category_Delete(){
 		
 		category.deletebtn_click();

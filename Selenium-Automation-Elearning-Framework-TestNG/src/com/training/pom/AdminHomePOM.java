@@ -28,6 +28,8 @@ private ScreenShot screenShot;
 	private WebElement catalog;
 	@FindBy(linkText="Categories")
 	private WebElement category;
+	@FindBy(linkText="Products")
+	private WebElement product;
 	@FindBy(linkText ="Dashboard")
 	private WebElement dashboard;
 	@FindBy(linkText = "View more...")                                          
@@ -37,16 +39,25 @@ private ScreenShot screenShot;
 	
 	
 	
-	public void clickmenu() throws InterruptedException{
+	public void clickmenu(String Adminmenu) throws InterruptedException{
 	Thread.sleep(8000);
 		//WebDriverWait wt = new WebDriverWait(this.driver, 100);
 		//wt.until(ExpectedConditions.visibilityOfAllElements(llist));
-		System.out.println(driver.getTitle());
+	
 	Actions actn = new Actions(this.driver); 
 	actn.moveToElement(this.catalog).build().perform();
 	//screenShot.captureScreenShot("Catalog_Options");
-	
+	if(Adminmenu.equalsIgnoreCase("Categories")){
 	actn.click(this.category).build().perform();
+	}
+	else if(Adminmenu.equalsIgnoreCase("Products")){
+		actn.click(this.product).build().perform();
+		}
+	
+	
+	
+	
+	
 	//Thread.sleep(8000);
 	//screenShot.captureScreenShot("Category_Page");
 	
